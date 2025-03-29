@@ -1,0 +1,2 @@
+Maximum consecutive one’s (or zeros) in a binary array
+Given an array arr[] consisting of only 0’s and 1’s, the task is to find the count of a maximum number of consecutive 1’s or 0’s present in the array.
