@@ -1,0 +1,32 @@
+//Second largest element in an array
+Given an array of positive integers arr[] of size n, the task is to find second largest distinct element in the array.
+Note: If the second largest element does not exist, return -1.
+
+// User function Template for Java
+
+class Solution {
+    public int getSecondLargest(int[] arr) {
+        // Code Here
+        
+        //length of array
+        int n = arr.length;
+        
+        //largest and second largest element
+        int largest = -1;
+        int secLargest = -1;
+        
+        //iterating array for finding second largest
+        for(int i=0; i<n; i++){
+            if(arr[i] > largest){
+                secLargest = largest;
+                largest = arr[i];
+            }
+            else if(arr[i] > secLargest && arr[i] < largest){
+                secLargest = arr[i];
+            }
+        }
+   
+    return secLargest;
+    }
+}
+
