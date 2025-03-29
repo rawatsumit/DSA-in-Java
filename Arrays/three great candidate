@@ -1,0 +1,56 @@
+//Maximum product of a triplet (subsequence of size 3) in array
+Given an integer array, find a maximum product of a triplet in the array.
+Input:  arr[ ] =  [-10, -3, -5, -6, -20]
+Output: -90
+
+Time complexity: O(n);
+Space complexity: O(1)
+
+class Solution {
+    int maxProduct(int[] arr) {
+        
+        //array length
+        int n = arr.length;
+        
+        //largest, secLargest, thirdLargest
+        int largest = Integer.MIN_VALUE;
+        int secLargest = Integer.MIN_VALUE;
+        int thirdLargest = Integer.MIN_VALUE;
+        
+        //iterating array to find largest, second largest, third largest
+        for(int i=0; i<n; i++){
+            if(arr[i] > largest){
+                thirdLargest = secLargest;
+                secLargest = largest;
+                largest = arr[i];
+            }
+            else if(arr[i] > secLargest){
+                thirdLargest = secLargest;
+                secLargest = arr[i];
+            }
+            else if(arr[i] > thirdLargest){
+                thirdLargest = arr[i];
+            }
+        }
+        
+        //min, secMin
+        int min = Integer.MAX_VALUE;
+        int secMin = Integer.MAX_VALUE;
+        
+        //iterating array to find minimun and second minimum
+        for(int i=0; i<n; i++){
+            if(arr[i] < min){
+                secMin = min;
+                min = arr[i];
+            }
+            else if(arr[i] < secMin){
+                secMin = arr[i];
+            }
+        }
+        
+        //result
+        int result = Math.max(largest*secLargest*thirdLargest, largest*min*secMin);
+    
+        return result;
+    }
+}
