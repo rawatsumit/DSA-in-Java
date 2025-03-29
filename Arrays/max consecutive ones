@@ -1,2 +1,29 @@
 Maximum consecutive one’s (or zeros) in a binary array
 Given an array arr[] consisting of only 0’s and 1’s, the task is to find the count of a maximum number of consecutive 1’s or 0’s present in the array.
+
+Time complexity: O(n)
+Space complexity: O(1)
+
+class Solution {
+    public int maxConsecutiveCount(int[] arr) {
+        
+        //array length
+        int n = arr.length;
+        
+        //setting initial count & max count of consecutibe 1's or 0's
+        int count = 1;
+        int maxCount = 1;
+        
+        for(int i=1; i<n; i++){
+            if(arr[i] == arr[i-1]){
+                count++;
+            }
+            else{
+                maxCount = Math.max(maxCount, count);
+                count = 1;
+            }
+        }
+    
+        return Math.max(maxCount,count);
+    }
+}
