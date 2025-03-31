@@ -1,0 +1,31 @@
+Sort an array in wave form
+Given an unsorted array of integers, sort the array into a wave array. An array arr[0..n-1] is sorted in wave form if: arr[0] >= arr[1] <= arr[2] >= arr[3] <= arr[4] >= …..
+Time complexity: O(n)
+Space complexity: O(1)
+
+class Solution {
+    //swap function
+    static void swap(int[] arr, int a, int b){
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+    
+    public static void convertToWave(int[] arr) {
+        // code here
+        
+        //length of array
+        int n = arr.length;
+        
+        //iterating array at even positions
+        for(int i=0; i< n-1; i+=2){
+            //if adjacent elements are greater, then swap
+            if(i > 0 && arr[i] < arr[i-1]){
+                swap(arr, i, i-1);
+            }
+            if(arr[i] < arr[i+1]){
+                swap(arr, i ,i+1);
+            }
+        }
+    }
+}
