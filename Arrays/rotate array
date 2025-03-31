@@ -1,0 +1,38 @@
+Rotate an Array by d – Counterclockwise or Left
+Given an array of integers arr[] of size n, the task is to rotate the array elements to the left by d positions.
+
+Time complexity: O(n)
+Space complexity: O(1)
+
+class Solution {
+    //function to rotate array
+    void rotate(int[] arr, int a, int b){
+        int left = a;
+        int right = b;
+        
+        while(left < right){
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
+            right--;
+        }
+    }
+    // Function to rotate an array by d elements in counter-clockwise direction.
+     void rotateArr(int arr[], int d) {
+        //array length
+        int n = arr.length;
+        
+        //handling edge cases
+        d = d%n;
+        
+        //rotating first d elements
+        rotate(arr, 0, d-1);
+        
+        //rotating last n-d elements
+        rotate(arr, d, n-1);
+        
+        //rotating entire array
+        rotate(arr, 0,n-1);
+       }
+}
