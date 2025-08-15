@@ -1,0 +1,31 @@
+
+3. You are given a sorted array of integers. Write a program to count how many unique pairs in the array sum up to a given target number.
+done
+
+4. triplet sum/public class Main
+{
+	public static void main(String[] args) {
+		int[] arr = {1,4,7,9,10,11,12,15};
+		int target = 38;
+		int pair = 0;
+		
+		
+		for(int i=0;i<arr.length-1;i++){
+		    int L = i+1;
+		    int R = arr.length-1;
+		    
+		    while(L<R){
+		        if(arr[L]+arr[R]+arr[i] < target){
+		            L++;
+		        }
+		        else if(arr[L]+arr[R]+arr[i] > target){
+		            R--;
+		        }
+		        else if(arr[L]+arr[R]+arr[i] == target){
+		            System.out.println("Triplet is: "+arr[L]+" ,"+arr[R]+" ,"+arr[i]);
+		            break;
+		        }
+		    }
+		}
+	}
+}
