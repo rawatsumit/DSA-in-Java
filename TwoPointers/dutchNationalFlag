@@ -1,0 +1,44 @@
+Sort Colors (Dutch National Flag Problem) – LeetCode 75
+Given an array containing 0s, 1s, and 2s, sort them in-place without using extra space.
+
+public class Main
+{   
+    
+    static void sortArr(int arr[]){
+       int L = 0;
+       int M = 0;
+       int R = arr.length-1;
+       
+       while(M<=R){
+           if(arr[M]==0){
+               //swap arr[M] and arr[L]
+               int temp1 = arr[M];
+               arr[M] = arr[L];
+               arr[L] = temp1; 
+               M++;
+               L++;
+           }
+           else if(arr[M] == 1){
+               M++;
+           }
+           else if(arr[M] ==2){
+               //swap arr[M] and arr[R]
+               int temp2 = arr[M];
+               arr[M] = arr[R];
+               arr[R] = temp2;
+               R--;
+           }
+       }
+    }
+    
+	public static void main(String[] args){
+	    int[] arr = {2,0,1};
+	    
+	    sortArr(arr);
+	    
+	    
+	    for(int i: arr){
+	        System.out.print(i+" ");
+	    }
+	}
+}
