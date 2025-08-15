@@ -3,7 +3,7 @@ Finding target sum in a sorted array
 nums = [2, 7, 11, 15]
 target = 9
 
-a. Approach 1 (TC: O(n2))
+a. Approach 1 (TC: O(n2)) //brute force
 public class Main
 {
 	public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class Main
 	}
 }
 
-b. Approach 2 (TC: O(n))
+b. Approach 2 (TC: O(n)) //two pointers
 public class Main
 {
 	public static void main(String[] args) {
