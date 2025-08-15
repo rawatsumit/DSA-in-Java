@@ -1,0 +1,47 @@
+Finding target sum in a sorted array
+
+nums = [2, 7, 11, 15]
+target = 9
+
+a. Approach 1 (TC: O(n2))
+public class Main
+{
+	public static void main(String[] args) {
+		int[] arr = {1,4,7,9,10,11,12,15};
+		int target = 19;
+		for(int i: arr){
+		    for(int j: arr){
+		        if(i + j = target){
+		            System.out.println("Two numbers are: "+a+ ", "+b);
+		        }
+		    }
+		}
+	}
+}
+
+b. Approach 2 (TC: O(n))
+public class Main
+{
+	public static void main(String[] args) {
+		int[] arr = {1,4,7,9,10,11,12,15};
+		int target = 19;
+		int L = 0;
+		int R = arr.length-1;
+		
+		while( L < R){
+		    if(arr[L] + arr[R] > target){
+		        R--;
+		    }
+		    else if(arr[L] + arr[R]< target){
+		        L++;
+		    }
+		    else if(arr[L] + arr[R] == target){
+		        System.out.println("Two numbers are: "+arr[L]+" ,"+ arr[R]);
+		        break;
+		    }
+		}
+		
+	}
+}
+
+
