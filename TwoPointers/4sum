@@ -30,7 +30,7 @@ public class Main
                            L++;
                        }
                        while( L<R && arr[R] == arr[R+1]){
-                           R++;
+                           R--;
                        }
                    }
                }
