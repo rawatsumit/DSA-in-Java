@@ -1,0 +1,47 @@
+4Sum – LeetCode 18
+Find all unique quadruplets (a, b, c, d) such that a + b + c + d = target.
+
+//4 sum
+
+public class Main
+{   
+    
+    static void fourSum(int arr[], int target){
+       for(int i=0; i<arr.length-4; i++){
+           for(int j = i+1; j < arr.length-3; j++){
+               int L = j+1;
+               int R = arr.length-1;
+               
+               while(L < R){
+                   int sum = arr[i]+arr[j]+arr[L]+arr[R];
+                   
+                   if(sum < target){
+                       L++;
+                   }
+                   else if(sum> target){
+                       R--;
+                   }
+                   else{
+                       System.out.println("The quadreplets: "+arr[i]+" ,"+arr[j]+" ,"+arr[L]+" ,"+arr[R]);
+                       L++;
+                       R--;
+                       
+                       while( L<R && arr[L] == arr[L-1]){
+                           L++;
+                       }
+                       while( L<R && arr[R] == arr[R+1]){
+                           R++;
+                       }
+                   }
+               }
+           }
+       }
+    }
+    
+	public static void main(String[] args){
+	    int[] arr = {1,1,2,3,5,7,9,11};
+	    int target = 25;
+	    
+	    fourSum(arr, target);
+	}
+}
