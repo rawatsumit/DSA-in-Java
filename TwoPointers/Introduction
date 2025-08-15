@@ -1,0 +1,19 @@
+Pattern: Two-Pointer Technique (Opposite Ends)
+
+When to use:
+Array is sorted (or can be sorted for the solution).
+You need to find pairs or triplets that match a certain condition.
+
+Often used for:
+Finding a pair with a given sum.
+Removing duplicates in-place.
+Reversing an array.
+
+How it works:
+Start with two pointers:
+left at the beginning of the array.
+right at the end of the array.
+Move pointers toward each other based on the condition:
+If the sum is too small, move left rightwards (left++).
+If the sum is too large, move right leftwards (right--).
+Repeat until left crosses right.
